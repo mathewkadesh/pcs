@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.2, user-scalable=no" />
+    <meta charset="utf-8" />
+    <title>KML Capture</title>
+    <style>
+      html,
+      body {
+        height: 370px;
+        padding: 0;
+        margin: 0;
+      }
+      #map {
+        height: 500px;
+        width: 600px;
+        overflow: hidden;
+        float: left;
+        border: thin solid #333;
+        margin-left: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <br />
+    <button onclick="sendCoordinates();">Finish</button>
+    <button onclick="clearCoordinates();">Clear</button>
+
+    <script type="text/javascript">
+
+      var colors = ['#3366CC', '#DC3912', '#FF9900', '#109618', '#990099', '#3B3EAC', '#0099C6', '#DD4477', '#66AA00', '#B82E2E', '#316395', '#994499', '#22AA99', '#AAAA11', '#6633CC', '#E67300', '#8B0707', '#329262', '#5574A6', '#3B3EAC'];
+      let map;
+      var coordinate = [];
+      var coordinates = [];
+
+      function clearCoordinates() {
+        coordinate = [];
+        sendCoordinates();
+      }
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 10,
+          center: { lat: 7.035824606044173, lng: 80.33827451159237 },
+          draggableCursor: "default",
+
+          // These are controllers ---------------------------------------
+          fullscreenControl: false,
+          mapTypeControl: false,
+          streetViewControl: false,
+
+          // These are map types -----------------------------------------
+          //mapTypeId: "terrain",
+          mapTypeId: "satellite",
+        });
+
+        // NOTE: This uses attributes of the json file
+        map.data.loadGeoJson("test.json");
+
+        google.maps.event.addListener(map, "click", function (event) {
+          marker = new google.maps.Marker({ position: event.latLng, map: map });
+          coordinate.push({
+            lat: event.latLng.lat(),
+            lng: event.latLng.lng(),
+          });
+          console.log(coordinate);
+        });
+      }
+
+      function sendCoordinates() {
+        // Construct the polygon.
+
+        const bermudaTriangle = new google.maps.Polygon({
+          paths: coordinate,
+          strokeColor: colors[coordinates.length],
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: colors[coordinates.length],
+          fillOpacity: 0.35,
+        });
+
+        bermudaTriangle.setMap(map);
+        console.log("Individual: " + coordinate[0]);
+        coordinates.push({
+          id: coordinates.length + 1,
+          color: colors[coordinates.length + 1],
+          allCoordinates: coordinate,
+        });
+        coordinate = [];
+        console.log("All: " + coordinates);
+        console.log(JSON.stringify(coordinates, null, 4));      }
+
+      window.initMap = initMap;
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBO-7fnvr_bhld57PhQt3Zgf6w2XrCs9ig&callback=initMap&v=weekly"
+      defer
+    ></script>
+  </body>
+</html>
