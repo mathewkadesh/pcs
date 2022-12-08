@@ -1,3 +1,10 @@
+<?php
+ 
+    include "db_connect.php";
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,11 +14,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="apple-touch-icon" sizes="76x76" href="assets/img/brand/faviconLogo.png">
 <link rel="icon" type="image/png" href="assets/img/brand/faviconLogo.png">
-<title>
-  PCS
-  </title>
-
-
+<title>PCS </title>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 <link href="../../use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
@@ -23,14 +26,31 @@
 
 <link href="assets/css/styles.css?v=1.0.3" rel="stylesheet" />
 
+<link
+      rel="stylesheet"
+      href="https://unpkg.com/jsvectormap/dist/css/jsvectormap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBO-7fnvr_bhld57PhQt3Zgf6w2XrCs9ig&callback=initMap&v=weekly"
+      defer></script>
 
+<style>
+     #map {
+        height: 500px;
+        width: 600px;
+        overflow: hidden;
+        float: left;
+        border: thin solid #333;
+        margin-left: 30%;
+      }
+    </style>
 </head>
-<body class="presentation-page" style="background-color: #EBF5FB;  
-background-image: url(assets/img/about-bg1.jpg);
-background-repeat: no-repeat; 
-background-attachment: scroll; 
-background-position: center top;
-background-size: 100% 35%; ">
+<body class="presentation-page">
 
 
 <!----------------------------------------------- Start of Navigation bar---------------------------------------------->
@@ -54,11 +74,7 @@ background-size: 100% 35%; ">
 <!-- <img src="assets/img/brand/blue.png"> -->
 </a>
 </div>
-<div class="col-6 collapse-close">
-<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
 
-</button>
-</div>
 </div>
 </div>
 <ul class="navbar-nav navbar-nav-hover align-items-lg-center ml-lg-auto">
@@ -75,6 +91,7 @@ background-size: 100% 35%; ">
 <span class="nav-link-inner--text" style="color: white; margin-right: 15px;">Our Services</span>
 </a>
 
+
 </li>
 <li >
 <a href="products.php" >
@@ -90,6 +107,7 @@ background-size: 100% 35%; ">
   <span class="nav-link-inner--text" style="color: white;margin-right: 15px;">Our Ecosystem</span>
   </a>
 
+  
 </li>
 <li>
   <a href="contact-us.html">
@@ -97,6 +115,7 @@ background-size: 100% 35%; ">
     <span class="nav-link-inner--text" style="color: white;margin-right: 15px;">Customer Support</span>
     </a>
 
+    
 </li>
 <li class="nav-item">
   <a href="register-page.html" class="btn btn-white" target="_blank">
@@ -104,115 +123,103 @@ background-size: 100% 35%; ">
   <span class="nav-link-inner--text">login <span style="font-size: 10px; text-transform: lowercase;">or</span> Sign Up</span>
   </a>
   </li>
+  
 </ul>
 </div>
 </div>
 </nav>
+</header>
 
+
+<div class="container">
+  <div class="row align-items-center text-lg-center">
+    <div class="col-lg-12 col-12" style="margin-top: 50px;">
+      <h1 style="font-size: 60px; font-weight: 800; color: #172b4d;">Our Projects</h1>
+     
+</div>
+</div>
+</div>
 <!----------------------------------------------- End of Navigation bar---------------------------------------------->
 
-<div class="wrapper">
-  
+<div class="section">
   <div class="container">
-    <div class="row align-items-center text-left">
-      <div class="col-lg-12 col-12" style="margin-top: 100px;">
-        <h1 style="font-size: 60px; font-weight: 800;">Our<br/> Services</h1>
-       
+  <div id="map"></div>
 </div>
-<p style="color: white; font-size: 20px;">The SPE team has its respective proficiencies in the environmental, technological, financial, and even the social fields, SPE was formed with the hopes of combining all those fields together to merge the traditional carbon sequestration activities with the ever-growing innovative sector.  A bridge between the practical and the technical in order to create an environmentally-conscious future.</p>
 </div>
 </div>
 
-<!----------------------------------------------- Start of Service 01---------------------------------------------->
+    <script src="https://unpkg.com/jsvectormap"></script>
+    <script src="https://unpkg.com/jsvectormap/dist/maps/world-merc.js"></script>
 
+    <script>
+     window.initMap = initMap;
+    </script>
 
-<section class="section-pattern" style="padding: 0;">
-  <div style="padding: 50px;">
-    <div class="container-fluid" style="background-color: white;">
-      <div class="row" >
-        <div class="col-lg-8 mx-auto " style="padding: 40px;">
-          <div class="section-description">
-          <h1 class="display-3">PCS Standards<span class="text-danger"> For Areas that Need More Space</span></h1>
-          <p class="lead">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. 
-              <br/>
-              <br/>
-            Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.</p>
-          </div>
-          </div>
-      
-          <div class="col-lg-4" style="background-image:url('assets/img/ill/standard.jpg'); background-repeat:no-repeat;background-size: 100% 100%;
-          background-position:center;">
-      
-      </div>
+ 
+
+<!----------------------------------------------- Start of Our ecosystem---------------------------------------------->
+<div class="section">
+    <div class="container-fluid" style="padding: 0 50px 0 50px;">
+    <div class="row">
+    <div class="col-md-10 mx-auto text-center">
+    <h3 class="desc my-5"> The latest projects</h3>
     </div>
-</div>
-  </section>
+    </div>
+    <div class="row">
+    <div class="col-md-12">
+    <div class="row">
+     
+     <?php 
 
-  <!----------------------------------------------- Start of Service 02---------------------------------------------->
+$sql = "SELECT * from projects";
+$result = mysqli_query($conn, $sql);
+ 
+echo '
+<div class="col-12" style="margin-top: 10px;">
 
-  <section class="section-pattern" style="padding: 0;">
-    <div style="padding: 50px;">
-      <div class="container-fluid" style="background-color: white;">
-        <div class="row" >
-          <div class="col-lg-8 mx-auto " style="padding: 40px;">
-            <div class="section-description">
-            <h1 class="display-3"><span style="font-size: 50px; font-weight: 700;">Certify</span>a project</h1>
-            <p class="lead">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. 
-                <br/>
-                <br/>
-              Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.</p>
-            </div>
-            <div class="btn-wrapper mt-5">
-              <a href="#" class="btn btn-primary btn-icon mb-3 mb-sm-0" target="_blank">
-              <span class="btn-inner--icon"><i class="fa fa-registered"></i></span>
-              <span class="btn-inner--text">Certify</span>
-              </a>
-              </div>
-
-            </div>
-        
-        <div class="col-lg-4" style="background-image:url('assets/img/ill/Certify.png'); background-repeat:no-repeat;background-size: 100% 100%;
-        background-position:center;">
-        
-        </div>
-        
-        </div>
-      </div>
-  </div>
-    </section>
+<table class="table table-striped table-hover">
+<thead>
+<tr>
+  <th scope="col">Id</th>
+  <th scope="col">Name</th>
+  <th scope="col">Country</th>
+  <th scope="col">Stage</th>
+  <th scope="col">Verification Body</th>
+  <th scope="col">Developer</th>
   
-  <!----------------------------------------------- Start of Service 03---------------------------------------------->
+</tr>
+</thead>';
 
-  <section class="section-pattern" style="padding: 0;">
-    <div style="padding: 50px;">
-      <div class="container-fluid" style="background-color: white;">
-        <div class="row">
-          <div class="col-lg-8 mx-auto " style="padding: 40px;">
-            <div class="section-description">
-            <h1 class="display-3"><span style="font-size: 50px; font-weight: 700;">Offset</span>your emission</h1>
-            <p class="lead">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. 
-                <br/>
-                <br/>
-              Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.</p>
-            </div>
+while($row = mysqli_fetch_assoc($result)){
+echo'
+<tbody>
+<tr>
+  <td>' . $row['projectId'] . '</td>
+  <td>' . $row['name'] . '</td>
+  <td>' . $row['country'] . '</td>
+  <td>' . $row['stage'] . '</td>
+  <td>' . $row['verificationBody'] . '</td>
+  <td>' . $row['developer'] . '</td>
+</tr>
+</tbody>
 
-            <div class="btn-wrapper mt-5">
-              <a href="#" class="btn btn-primary btn-icon mb-3 mb-sm-0" target="_blank">
-              <span class="btn-inner--icon"><i class="fa fa-sellsy"></i></span>
-              <span class="btn-inner--text">Offset</span>
-              </a>
-              </div>
-            </div>
-        
-            <div class="col-lg-4" style="background-image:url('assets/img/ill/plant.jpg'); background-repeat:no-repeat;background-size: 100% 100%;
-            background-position:center;">
-        
-        </div>
-      </div>
-  </div>
-    </section>
+';}
+echo '
+</table>
+</div>';
+  ?>
+  
+  
+    <div class="col-md-3 ml-auto mr-auto mt-5 text-center">
+    <button rel="tooltip" class="btn btn-primary btn-round btn-simple">Load more...</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
 
-    <!----------------------------------------------- Start of Footer ---------------------------------------------->
+<!----------------------------------------------- Start of Footer ---------------------------------------------->
 <footer class="footer-section">
   <div class="container">
      
@@ -280,36 +287,35 @@ background-size: 100% 35%; ">
 </footer>
 <!----------------------------------------------- End of Footer ---------------------------------------------->
 
-
 </div>
 
-<script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
-<script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
-<script src="../assets/js/core/bootstrap.min.js" type="text/javascript"></script>
-<script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
+<script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+<script src="assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
 
-<script src="../assets/js/plugins/bootstrap-switch.js"></script>
+<script src="assets/js/plugins/bootstrap-switch.js"></script>
 
-<script src="../assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+<script src="assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
 
-<script src="../assets/js/plugins/glide.js" type="text/javascript"></script>
+<script src="assets/js/plugins/glide.js" type="text/javascript"></script>
 
-<script src="../assets/js/plugins/moment.min.js"></script>
+<script src="assets/js/plugins/moment.min.js"></script>
 
-<script src="../assets/js/plugins/choices.min.js" type="text/javascript"></script>
+<script src="assets/js/plugins/choices.min.js" type="text/javascript"></script>
 
-<script src="../assets/js/plugins/datetimepicker.js" type="text/javascript"></script>
+<script src="assets/js/plugins/datetimepicker.js" type="text/javascript"></script>
 
-<script src="../assets/js/plugins/jasny-bootstrap.min.js"></script>
+<script src="assets/js/plugins/jasny-bootstrap.min.js"></script>
 
-<script src="../assets/js/plugins/headroom.min.js"></script>
+<script src="assets/js/plugins/headroom.min.js"></script>
 
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
 
-<script async defer src="../../../buttons.github.io/buttons.js"></script>
-<script src="../assets/js/styles.js?v=1.0.3" type="text/javascript"></script> 
-<script src="../assets/demo/jquery.sharrre.js"></script>
+<script async defer src="../../buttons.github.io/buttons.js"></script>
+<script src="assets/js/styles.js?v=1.0.3" type="text/javascript"></script> 
+<script src="assets/demo/jquery.sharrre.js"></script>
 <script>
     $(document).ready(function() {
 
@@ -348,7 +354,7 @@ background-size: 100% 35%; ">
         s = b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t, s)
       }(window,
-        document, 'script', '../../../connect.facebook.net/en_US/fbevents.js');
+        document, 'script', '../../connect.facebook.net/en_US/fbevents.js');
 
       try {
         fbq('init', '111649226022273');
@@ -367,7 +373,30 @@ background-size: 100% 35%; ">
 <noscript>
     <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=111649226022273&amp;ev=PageView&amp;noscript=1" />
   </noscript>
-<script src="../../../cdn.trackjs.com/agent/v3/latest/t.js"></script>
+<script>
+    // Carousel
+    new Glide('.glide', {
+      type: 'carousel',
+      startAt: 0,
+      focusAt: 2,
+      perTouch: 1,
+      perView: 4
+    }).mount();
+
+
+    // Testimonial Carousel
+    new Glide('.testimonial-glide', {
+      type: 'carousel',
+      startAt: 0,
+      focusAt: 2,
+      perTouch: 1,
+      perView: 4
+    }).mount();
+
+    ArgonKit.initGoogleMaps();
+    ArgonKit.initGoogleMaps2();
+  </script>
+<script src="../../cdn.trackjs.com/agent/v3/latest/t.js"></script>
 <script>
     window.TrackJS &&
       TrackJS.install({
@@ -375,8 +404,8 @@ background-size: 100% 35%; ">
         application: "argon-design-system-pro"
       });
   </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"755cbaf0be5f4ccd","token":"1b7cbb72744b40c580f8633c6b62637e","version":"2022.8.1","si":100}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"755cbaee6a654cb0","token":"1b7cbb72744b40c580f8633c6b62637e","version":"2022.8.1","si":100}' crossorigin="anonymous"></script>
+
 </body>
 
-<!-- Mirrored from demos.creative-tim.com/argon-design-system-pro/examples/about-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Oct 2022 07:41:09 GMT -->
 </html>
